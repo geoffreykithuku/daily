@@ -1,8 +1,5 @@
 import { SignUp } from "@clerk/nextjs";
 
+const SignUpPage = () => <SignUp afterSignUpUrl="/new-user" redirectUrl='/new-user' />;
 
-const SignUpPage = () => (
-  <SignUp />
-);
-
-export default SignUpPage
+export default SignUpPage;
