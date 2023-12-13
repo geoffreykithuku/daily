@@ -1,11 +1,11 @@
+const EntryCard = ({ entry }) => {
+  return (
+    <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
+      <div className="px-4 py-5 sm:px-6">Date</div>
+      <div className="px-4 py-5 sm:p-6">Summary</div>
+      <div className="px-4 py-4 sm:px-6">Mood</div>
+    </div>
+  );
+};
 
-
-const EntryCard = ({entry}) => {
-    return (
-        <div>
-            <h1>{entry.id}</h1>
-        </div>
-    )
-}
-
-export default EntryCard
+export default EntryCard;
