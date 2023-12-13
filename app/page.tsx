@@ -1,6 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-export default function Home() {
+
+import { auth } from "@clerk/nextjs";
+export default async function Home() {
+
+  const { userId } = await auth()
+  
+  let href = '/new-user'
+
+  if (userId) {
+    href = '/journal'
+  }
+
   return (
     <div className="w-screen h-screen bg-[#363062] text-[#F5E8C7] py-10 sm:py-[140px] px-5">
       <div className="max-w-[500px] mx-auto my-auto justify-center items-center flex flex-col">
@@ -12,7 +23,7 @@ export default function Home() {
           self-discovery, and start each day with a fresh perspective. Let Daily
           be your guide on your journey to self-awareness.
         </p>
-        <Link href="/journal">
+        <Link href={href}>
           <button className="bg-[#435585] shadow-sm px-5 py-3 rounded-md font-semibold text-xl mx-auto">
             Get Started
           </button>
