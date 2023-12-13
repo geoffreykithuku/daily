@@ -2,12 +2,15 @@
 
 import { createNewEntry } from "@/utils/api";
 import { useRouter } from "next/navigation";
+
+
 const NewEntry = () => {
   const router = useRouter();
 
   const handleOnClick = async () => {
-    const entry = await createNewEntry();
-    router.push(`/journal/${entry.id}`);
+    const data = await createNewEntry();
+
+    router.push(`/journal/${data.id}`);
   };
   return (
     <div
